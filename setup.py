@@ -7,12 +7,6 @@ computational analysis of visual culture. This is a special module containing
 experimental code used in our workshops.
 """
 
-extras = [
-    "detectron2",
-    "keras",
-    "numpy"
-]
-
 setup(
     name="dvt_workshop",
     version="0.0.1",
@@ -22,7 +16,6 @@ setup(
     author_email="taylor.arnold@acm.org",
     url="https://github.com/distant-viewing/dvt_workshop",
     license="GPL-2",
-    extras_require=extras,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
