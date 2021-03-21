@@ -18,6 +18,8 @@ def dvt_detectron_config():
     return predictor, md
 
 def dvt_tidy_instance_data(predictions, md, ofile):
+    import pandas as pd
+
     instances = predictions["instances"]
     class_names = md.thing_classes
 
@@ -63,6 +65,7 @@ def dvt_load_embed_image_model():
 
 
 def dvt_embed_image(path, embed):
+    import numpy as np
     from tensorflow.keras.preprocessing import image
     from tensorflow.keras.applications.vgg19 import preprocess_input
 
