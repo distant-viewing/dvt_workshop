@@ -52,13 +52,13 @@ def dvt_show_instance_predictions(predictions, md, im):
     cv2_imshow(out.get_image()[:, :, ::-1])
 
 
-def dvt_load_embed_image_model():
+def dvt_load_embed_image_model(layer="fc2"):
     from tensorflow.keras.applications.vgg19 import VGG19
     from tensorflow.keras.models import Model
 
     base_model = VGG19(weights='imagenet')
     embed = Model(
-        inputs=base_model.input, outputs=base_model.get_layer('fc2').output
+        inputs=base_model.input, outputs=base_model.get_layer(layer).output
     )
 
     return embed
